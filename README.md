@@ -9,7 +9,7 @@
 ## 1: Serv00一键部署命令
 * 默认用户名和密码都为账户名称，请及时更改
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/eooce/Merge-sub/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/kassded/Merge-sub/main/install.sh)
 ```
 
 ## 2: vps一键部署，
