@@ -34,7 +34,7 @@ fi
 install_sub() {
 check_website
 rm -rf "$WORKDIR" && mkdir -p "$WORKDIR" && chmod 777 "$WORKDIR" >/dev/null 2>&1
-cd "$WORKDIR" && git clone https://github.com/eooce/Merge-sub.git
+cd "$WORKDIR" && git clone https://github.com/kassded/Merge-sub.git
 mv "$WORKDIR"/Merge-sub/* "$WORKDIR" >/dev/null 2>&1
 rm -rf workers Merge-sub Dockerfile README.md install.sh>/dev/null 2>&1
 ip_address=$(devil vhost list | sed -n '5p' | awk '{print $1}')
