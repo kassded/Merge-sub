@@ -16,16 +16,6 @@ let CFPORT = process.env.CFPORT || "443";
 const DATA_FILE = path.join(__dirname, 'data.json');
 const CREDENTIALS_FILE = path.join(__dirname, 'credentials.json');
 
-const USERNAME = os.userInfo().username;
-const USERNAME_DOMAIN = USERNAME.toLowerCase().replace(/[^a-z0-9-]/g, '');
-// 定义app.js logs 目录路径
-const LOGS_DIR = path.join('/home', USERNAME, 'domains', `${USERNAME_DOMAIN}.serv00.net`, 'logs');
-// 检查并创建app.js logs 文件夹
-if (!fs.existsSync(LOGS_DIR)) {
-    fs.mkdirSync(LOGS_DIR, { recursive: true });
-    console.log('创建日志文件夹:', LOGS_DIR);
-}
-
 // 添加全局变量声明
 let subscriptions = [];
 let nodes = '';
