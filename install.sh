@@ -12,6 +12,18 @@ HOSTNAME=$(hostname)
 USERNAME=$(whoami | tr '[:upper:]' '[:lower:]')
 [[ "$HOSTNAME" == "s1.ct8.pl" ]] && WORKDIR="${HOME}/domains/${USERNAME}.ct8.pl/public_nodejs" || WORKDIR="${HOME}/domains/${USERNAME}.serv00.net/public_nodejs"
 
+# logs 目录
+LOGS_DIR="${HOME}/domains/${USERNAME}.serv00.net/logs"
+
+# 检查并创建 logs 目录
+if [ ! -d "$LOGS_DIR" ]; then
+    mkdir -p "$LOGS_DIR"
+    green "创建日志文件夹: $LOGS_DIR"
+else
+    yellow "日志文件夹已存在: $LOGS_DIR"
+fi
+
+
 check_website() {
 yellow "正在安装中,请稍后..."
 CURRENT_SITE=$(devil www list | awk -v username="${USERNAME}" '$1 == username".serv00.net" && $2 == "nodejs" {print $0}')
